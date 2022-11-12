@@ -1,0 +1,178 @@
+var a;
+undefined
+typeof a;
+'undefined'
+a=100;
+100
+typeof a;
+'number'
+a=1;
+1
+typeof a;
+'number'
+a=100000000000000;
+100000000000000
+typeof a;
+'number'
+a=100.200;
+100.2
+typeof a;
+'number'
+a= 'Amit';
+'Amit'
+typeof a;
+'string'
+a = "Amit";
+'Amit'
+typeof a;
+'string'
+a = 'A';
+'A'
+typeof a;
+'string'
+a = `hgdjkfghfdghkjfhgkjdfhgjkdhfgkjhdfjkghdkjghdfkjghkdhgdkjhgfdjk
+hgjdfkhgdkjghk
+ghdfkjhgkd`;
+'hgdjkfghfdghkjfhgkjdfhgjkdhfgkjhdfjkghdkjghdfkjghkdhgdkjhgfdjk\nhgjdfkhgdkjghk\nghdfkjhgkd'
+a = "hsdjkhghdfgkhkdfhkdjfhk
+gjdghdfkjghkjdf
+hgdsgjkdf";
+
+VM657:1 Uncaught SyntaxError: Invalid or unexpected token
+a = "hsdjkhghdfgkhkdfhkdjfhk"+
+"gjdghdfkjghkjdf"+
+"hgdsgjkdf";
+
+'hsdjkhghdfgkhkdfhkdjfhkgjdghdfkjghkjdfhgdsgjkdf'
+var b = 20;
+undefined
+var c = 30;
+undefined
+"B is "+b +" C is "+c;
+'B is 20 C is 30'
+`B is ${b} C is ${c}`;
+'B is 20 C is 30'
+var t = true;
+undefined
+typeof t;
+'boolean'
+100 + true;
+101
+true + true;
+2
+true - false;
+1
+var y = Number.MAX_SAFE_INTEGER;
+undefined
+y;
+9007199254740991
+y++;
+9007199254740991
+y++;
+9007199254740992
+y++;
+9007199254740992
+y++;
+9007199254740992
+y++;
+9007199254740992
+y++;
+9007199254740992
+y++;
+9007199254740992
+y++;
+9007199254740992
+y = 9007199254740992n;
+9007199254740992n
+typeof y;
+'bigint'
+y++;
+9007199254740992n
+y++;
+9007199254740993n
+y++;
+9007199254740994n
+y++;
+9007199254740995n
+y++;
+9007199254740996n
+y++;
+9007199254740997n
+y++;
+9007199254740998n
+y = 9007199254740992n + 543534543534534543454n;
+543543550733789284446n
+y = 4444n + 22;
+VM1322:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:11
+(anonymous) @ VM1322:1
+y = BigInt("645645645654654645645435435");
+645645645654654645645435435n
+var marks = [90,88,77,66,88];
+undefined
+typeof marks;
+'object'
+marks instanceof Array;
+true
+typeof Array;
+'function'
+marks.length;
+5
+marks.push(77);
+6
+marks;
+(6) [90, 88, 77, 66, 88, 77]
+marks = null;
+null
+marks.length;
+VM1780:1 Uncaught TypeError: Cannot read properties of null (reading 'length')
+    at <anonymous>:1:7
+(anonymous) @ VM1780:1
+typeof marks;
+'object'
+var g = 1000;
+undefined
+typeof g;
+'number'
+g = null;
+null
+typeof g;
+'object'
+var obj = {};
+undefined
+typeof obj;
+'object'
+obj instanceof Array;
+false
+obj instanceof Object;
+true
+typeof Object;
+'function'
+var e=[90,100,444];
+undefined
+e;
+(3) [90, 100, 444]
+e.toString();
+'90,100,444'
+e instanceof Array;
+true
+e instanceof Object;
+true
+var f= {};
+undefined
+f instanceof Array;
+false
+f instanceof Object;
+true
+f = {id:1001, name:'Ram'};
+{id: 1001, name: 'Ram'}
+var temp = [11,14,16,22,33,34,21,27,29,38];
+undefined
+var temp2 = {'shimla':11, 'delhi':22, 'pune':21};
+undefined
+temp2['delhi']
+22
+temp[3];
+22
+temp2.delhi;
+22

@@ -1,0 +1,206 @@
+var obj = {id:1001, name:'Amit'};
+undefined
+typeof obj;
+'object'
+obj instanceof Object;
+true
+var dhoni = {name:'MS Dhoni', age:43, 50: 88, 100:20,6:1000,4:3000};
+undefined
+dhoni.name;
+'MS Dhoni'
+dhoni.age;
+43
+dhoni.50;
+VM440:1 Uncaught SyntaxError: Unexpected number
+dhoni[50];
+88
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', age: 43}
+dhoni.first name = "MS";
+VM567:1 Uncaught SyntaxError: Unexpected identifier 'name'
+dhoni.['first name'] = "MS";
+VM614:1 Uncaught SyntaxError: Unexpected token '['
+dhoni['first name'] = "MS";
+'MS'
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', age: 43, first name: 'MS'}4: 30006: 100050: 88100: 20age: 43first name: "MS"name: "MS Dhoni"[[Prototype]]: Object
+dhoni.lastname = "Singh";
+'Singh'
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', age: 43, first name: 'MS', lastname: 'Singh'}
+dhoni.age=44;
+44
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', age: 44, first name: 'MS', lastname: 'Singh'}
+delete dhoni.age;
+true
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', first name: 'MS', lastname: 'Singh'}4: 30006: 100050: 88100: 20first name: "MS"lastname: "Singh"name: "MS Dhoni"[[Prototype]]: Object
+delete dhoni['first name'];
+true
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', lastname: 'Singh'}4: 30006: 100050: 88100: 20lastname: "Singh"name: "MS Dhoni"[[Prototype]]: Object
+delete dhoni.ffff;
+true
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', lastname: 'Singh'}
+let a = 'name';
+undefined
+dhoni.a;
+undefined
+dhoni[a];
+'MS Dhoni'
+a=50;
+50
+dhoni[a];
+88
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', lastname: 'Singh'}
+for(var key in dhoni){
+    console.log(key);
+    
+}
+VM1386:2 4
+VM1386:2 6
+VM1386:2 50
+VM1386:2 100
+VM1386:2 name
+VM1386:2 lastname
+undefined
+dhoni;
+{4: 3000, 6: 1000, 50: 88, 100: 20, name: 'MS Dhoni', lastname: 'Singh'}
+for(var key in dhoni){
+    console.log(key, dhoni[key]);
+    
+}
+VM1503:2 4 3000
+VM1503:2 6 1000
+VM1503:2 50 88
+VM1503:2 100 20
+VM1503:2 name MS Dhoni
+VM1503:2 lastname Singh
+undefined
+var e = null;
+undefined
+typeof e;
+'object'
+var g ;
+undefined
+typeof g;
+'undefined'
+undefined == null;
+true
+10 == "10"
+true
+undefined === null;
+false
+10 === "10"
+false
+10=="10"
+true
+var y = "Let's go ";
+undefined
+y;
+"Let's go "
+100 + null;
+100
+100 + undefined;
+NaN
+isNaN(100 + undefined);
+true
+isNaN(100 + undefined)?0:100;
+0
+100 /0;
+Infinity
+isFinite(100/0)?100:0;
+0
+typeof (100/0)
+'number'
+typeof (100-undefined)
+'number'
+"Hello" + null;
+'Hellonull'
+"Hello "+undefined;
+'Hello undefined'
+true + undefined;
+NaN
+true + null;
+1
+[] == []
+false
+[] === [];
+false
+{} == {};
+VM2412:1 Uncaught SyntaxError: Unexpected token '=='
+{}=={};
+VM2427:1 Uncaught SyntaxError: Unexpected token '=='
+{} ==={}
+false
+console.log("Hello JS ");
+VM2576:1 Hello JS 
+undefined
+typeof console;
+'object'
+typeof console.log
+'function'
+var obj = {id:1001, name:'Amit'};
+undefined
+console.log("Object is "+obj);
+VM2929:1 Object is [object Object]
+undefined
+obj;
+{id: 1001, name: 'Amit'}
+"Hello "+10
+'Hello 10'
+"Hello" + true;
+'Hellotrue'
+"Hello" + obj;
+'Hello[object Object]'
+obj.toString();
+'[object Object]'
+console.log('Obj is ', obj);
+VM3204:1 Obj is  {id: 1001, name: 'Amit'}
+undefined
+var gg = [10,20,30];
+undefined
+"Hello "+gg;
+'Hello 10,20,30'
+console.log('Hi', gg, obj,r);
+VM3438:1 Uncaught ReferenceError: r is not defined
+    at <anonymous>:1:27
+(anonymous) @ VM3438:1
+console.log('Hi', gg, obj,y);
+VM3464:1 Hi (3) [10, 20, 30] {id: 1001, name: 'Amit'} Let's go 
+undefined
+obj;
+{id: 1001, name: 'Amit'}id: 1001name: "Amit"[[Prototype]]: Object
+console.dir(obj);
+VM3545:1 Objectid: 1001name: "Amit"[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+console.dir(isNaN);
+VM3603:1 ƒ isNaN()length: 1name: "isNaN"arguments: (...)caller: (...)[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[Scopes]]: Scopes[0]No properties[[Scopes]]: Scopes[0]
+undefined
+isNaN;
+ƒ isNaN() { [native code] }
+var g = 100;
+undefined
+g;
+100
+console.dir(g);
+VM3701:1 100
+undefined
+var arr = [10,20];
+undefined
+console.dir(arr);
+VM3795:1 Array(2)0: 101: 20length: 2[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+obj;
+{id: 1001, name: 'Amit'}
+console.dir(obj);
+VM3859:1 Objectid: 1001name: "Amit"[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+arr;
+(2) [10, 20]
+console.table(arr);
+VM3954:1 (index)Value(index)Value010120Array(2)
+undefined

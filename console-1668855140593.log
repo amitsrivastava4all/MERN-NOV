@@ -1,0 +1,342 @@
+function add(){
+    console.log("I am the Add ");
+}
+undefined
+add();
+VM192:2 I am the Add 
+undefined
+add(10,2);
+VM192:2 I am the Add 
+undefined
+console.dir(add);
+VM302:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM192:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function add(){
+    console.log(arguments.length);
+}
+undefined
+add();
+VM463:2 0
+undefined
+add(12,34,55);
+VM463:2 3
+undefined
+add(12,34,55,[90,88,77]);
+VM463:2 4
+undefined
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add(1,2,3,4,5,6,7,8,9,10);
+55
+add();
+0
+add(1,2,3);
+6
+add(1,2,3,4,5,6,7,8,"9",10);
+'36910'
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,2,3,4,5,6,7,8,"9",10);
+55
+parseInt("9")
+9
+parseFloat("90.20");
+90.2
+parseInt("nine");
+NaN
+200 + NaN;
+NaN
+add(1,2,3,4,5,6,7,8,"nine",10);
+NaN
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,2,3,4,5,6,7,8,"nine",10);
+10
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(1,2,3,4,5,6,7,8,"nine",10);
+46
+function show(){
+    return 2;
+}
+undefined
+function disp(){
+    return "2";
+}
+undefined
+add(show, disp)
+0
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(show, disp)
+4
+add([1,2],[3,4]);
+4
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + arguments[i][j];
+            }
+            continue; // Skip the Iteration
+        }
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add([1,2],[3,4]);
+10
+add([1,2],[3,4], show, disp, 1,"2", "three");
+17
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+            }
+            continue; // Skip the Iteration
+        }
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add([1,"2"],["3",4], show, disp, 1,"2", "three");
+17
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<arguments.length ; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                if(typeof arguments[i][j]==='function'){
+            arguments[i][j] = arguments[i][j]();
+        }
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+            }
+            continue; // Skip the Iteration
+        }
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i]();
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add([1,"2", show],["3",4,disp], show, disp, 1,"2", "three");
+21
+var t = {"one":1,"two":2,"three":3};
+undefined
+t['three'];
+3
+function add(...args){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<args.length ; i++){
+        if(args[i] instanceof Array){
+            for(var j = 0; j<args[i].length; j++){
+                if(typeof args[i][j]==='function'){
+            args[i][j] = args[i][j]();
+        }
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+            }
+            continue; // Skip the Iteration
+        }
+        if(typeof args[i]==='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+add([1,"2", show],["3",4,disp], show, disp, 1,"2", "three");
+21
+function add(...args){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i = 0 ; i<args.length ; i++){
+        if(args[i] instanceof Array){
+            for(var j = 0; j<args[i].length; j++){
+                if(typeof args[i][j]==='function'){
+            args[i][j] = args[i][j]();
+        }
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+            }
+            continue; // Skip the Iteration
+        }
+        if(typeof args[i]==='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+function add(...args){
+    console.log('REST ', args instanceof Array);
+    console.log('ARGUMENTS ',arguments instanceof Array);
+    var sum = 0;
+    for(var i = 0 ; i<args.length ; i++){
+        if(args[i] instanceof Array){
+            for(var j = 0; j<args[i].length; j++){
+                if(typeof args[i][j]==='function'){
+            args[i][j] = args[i][j]();
+        }
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+            }
+            continue; // Skip the Iteration
+        }
+        if(typeof args[i]==='function'){
+            args[i] = args[i]();
+        }
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+add([1,"2", show],["3",4,disp], show, disp, 1,"2", "three");
+VM3083:2 REST  true
+VM3083:3 ARGUMENTS  false
+21
+arr;
+VM3108:1 Uncaught ReferenceError: arr is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM3108:1
+var arr = [10,20];
+undefined
+function test(...a, ...b){}
+VM3230:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function test(x,y,z, ...b){
+    console.log(x, y, z , b);
+}
+undefined
+test();
+VM3359:2 undefined undefined undefined []
+undefined
+test(1,2,3,9,10,20,30,40,5);
+VM3359:2 1 2 3 (6) [9, 10, 20, 30, 40, 5]
+undefined
+function test(x=0,y=0,z=0, ...b){
+    console.log(x, y, z , b);
+}
+undefined
+test();
+VM3508:2 0 0 0 []
+undefined
+var a = [10,20,30];
+undefined
+var b = [90,100,200];
+undefined
+var c = [a,b];
+undefined
+c[0][2];
+30
+c[0][2] = 3000;
+3000
+a;
+(3) [10, 20, 3000]
+var d  = [...a,...b];
+undefined
+d;
+(6) [10, 20, 3000, 90, 100, 200]
+c;
+(2) [Array(3), Array(3)]
+c[0][0];
+10
+d[0];
+10
+var obj = {id:1001, name:'Ram'};
+undefined
+var obj2 = {id:1002, age:21, salary:8888};
+undefined
+var obj3 = {obj, obj2};
+undefined
+obj3.obj.name;
+'Ram'
+obj3;
+{obj: {…}, obj2: {…}}obj: {id: 1001, name: 'Ram'}obj2: {id: 1002, age: 21, salary: 8888}[[Prototype]]: Object
+var obj4 = {...obj, ...obj2};
+undefined
+obj4;
+{id: 1002, name: 'Ram', age: 21, salary: 8888}
+obj4.age;
+21
+obj4.age++;
+21
+obj4;
+{id: 1002, name: 'Ram', age: 22, salary: 8888}
+delete obj4.age;
+true
+obj4;
+{id: 1002, name: 'Ram', salary: 8888}
+obj4.myage =22;
+22
+obj4;
+{id: 1002, name: 'Ram', salary: 8888, myage: 22}
+obj4.marks = [100,200,300];
+(3) [100, 200, 300]
+obj4;
+{id: 1002, name: 'Ram', salary: 8888, myage: 22, marks: Array(3)}
+obj4.marks.push(400);
+4
+obj4;
+{id: 1002, name: 'Ram', salary: 8888, myage: 22, marks: Array(4)}
+obj4.marks = [77,55,100,200,300];
+(5) [77, 55, 100, 200, 300]
+obj4;
+{id: 1002, name: 'Ram', salary: 8888, myage: 22, marks: Array(5)}
+obj4.marks = {'eng':88, 'maths':44};
+{eng: 88, maths: 44}
+obj4;
+{id: 1002, name: 'Ram', salary: 8888, myage: 22, marks: {…}}id: 1002marks: {eng: 88, maths: 44}myage: 22name: "Ram"salary: 8888[[Prototype]]: Object

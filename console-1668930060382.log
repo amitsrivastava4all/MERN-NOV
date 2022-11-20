@@ -1,0 +1,38 @@
+window; // tab
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+typeof window;
+'object'
+var t = 100;
+undefined
+window.t;
+100
+t; // window.t;
+100
+function test(){
+    // var d;
+    console.log('D is ', d);
+    if(10>2){
+        var d = 1000; // d =1000
+    }
+    console.log('D is ', d);
+}
+undefined
+test();
+VM425:3 D is  undefined
+VM425:7 D is  1000
+undefined
+function test(){
+    // var d;
+    console.log('D is ', d);
+    var d = 200;
+    if(10>2){
+        var d = 1000; // d =1000
+    }
+    var d = 333;
+    console.log('D is ', d);
+}
+undefined
+test();
+VM505:3 D is  undefined
+VM505:9 D is  333
+undefined

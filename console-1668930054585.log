@@ -1,0 +1,31 @@
+show();
+function show(){
+    console.log("I am the Show ");
+    return 10;
+}
+VM290:3 I am the Show 
+10
+var e = 100; // variable expression
+undefined
+var q = function(){
+    
+}
+undefined
+typeof q;
+'function'
+var q = function(){
+    console.log('I am the Function Expression ');
+}
+undefined
+q();
+VM644:2 I am the Function Expression 
+undefined
+k();
+var k = function(){
+    console.log('I am the Function Expression ');
+}
+VM685:1 Uncaught TypeError: k is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM685:1
+k;
+undefined

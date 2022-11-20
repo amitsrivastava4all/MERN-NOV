@@ -1,0 +1,183 @@
+function calc(){
+    var add = function(a,b){
+        return a + b;
+    }
+    var sub = function(){
+        return a-b;
+        
+    }
+    return add, sub;
+}
+undefined
+calc();
+ƒ (){
+        return a-b;
+        
+    }
+function calc(){
+    var add = function(a,b){
+        return a + b;
+    }
+    var sub = function(){
+        return a-b;
+        
+    }
+    return [add, sub];
+}
+undefined
+calc();
+(2) [ƒ, ƒ]
+calc()[0](10,20);
+30
+function calc(){
+    var add = function(a,b){
+        return a + b;
+    }
+    var sub = function(){
+        return a-b;
+        
+    }
+    return add;
+}
+undefined
+var f = calc();
+undefined
+typeof f;
+'function'
+f(10,20);
+30
+calc()(10,20);
+30
+function calc(){
+    var add = function(a,b){
+        return a + b;
+    }
+    var sub = function(){
+        return a-b;
+        
+    }
+    return [add, sub];
+}
+undefined
+calc()[0](10,20);
+30
+calc()[1](10,20);
+VM684:6 Uncaught ReferenceError: a is not defined
+    at Array.sub (<anonymous>:6:9)
+    at <anonymous>:1:10
+sub @ VM684:6
+(anonymous) @ VM720:1
+function calc(){
+    var add = function(a,b){
+        return a + b;
+    }
+    var sub = function(a,b){
+        return a-b;
+        
+    }
+    return [add, sub];
+}
+undefined
+calc()[1](10,20);
+-10
+calc();
+(2) [ƒ, ƒ]0: ƒ (a,b)1: ƒ (a,b)length: 2[[Prototype]]: Array(0)
+function calc(){
+    var add = function addition(a,b){
+        return a + b;
+    }
+    var sub = function subtraction(a,b){
+        return a-b;
+        
+    }
+    return [add, sub];
+}
+undefined
+calc();
+(2) [ƒ, ƒ]0: ƒ addition(a,b)1: ƒ subtraction(a,b)length: 2[[Prototype]]: Array(0)
+calc()[0](1000,2000);
+3000
+function calc(){
+    var add = function (a,b){
+        return a + b;
+    }
+    var sub = function (a,b){
+        return a-b;
+        
+    }
+    return {add : add, sub};
+}
+undefined
+calc();
+{add: ƒ, sub: ƒ}
+calc().add(10,20);
+30
+calc()['add'](10,20);
+30
+{
+    // var a ; // init undefined
+    console.log('Before ',a); // undefined
+    var a = 10;
+    console.log('Outer A is ', a); //10
+    {
+         var a = 20;
+    console.log('Inner A is ', a); //20
+    }
+     
+    console.log('Outer A is ', a); //20
+}
+VM1594:3 Before  undefined
+VM1594:5 Outer A is  10
+VM1594:8 Inner A is  20
+VM1594:11 Outer A is  20
+undefined
+{
+    // let a ; // not init  (TDZ)
+    console.log('Before ',b); // ERROR
+    let b = 10;
+    console.log('Outer B is ', b); //10
+    {
+        console.log('Inner ', b); // TDZ 
+        let b = 20;
+    console.log('Inner B is ', b); //20
+    }
+     
+    console.log('Outer B is ', b); //20
+}
+VM1867:3 Uncaught ReferenceError: Cannot access 'b' before initialization
+    at <anonymous>:3:27
+(anonymous) @ VM1867:3
+{
+    // let a ; // not init  (TDZ)
+    //console.log('Before ',b); // ERROR
+    let b = 10;
+    console.log('Outer B is ', b); //10
+    {
+        console.log('Inner ', b); // TDZ 
+        let b = 20;
+    console.log('Inner B is ', b); //20
+    }
+     
+    console.log('Outer B is ', b); //20
+}
+VM1880:5 Outer B is  10
+VM1880:7 Uncaught ReferenceError: Cannot access 'b' before initialization
+    at <anonymous>:7:31
+(anonymous) @ VM1880:7
+{
+    // let a ; // not init  (TDZ)
+    //console.log('Before ',b); // ERROR TDZ
+    let b = 10;
+    console.log('Outer B is ', b); //10
+    {
+        //console.log('Inner ', b); // ERROR TDZ 
+        let b = 20;
+    console.log('Inner B is ', b); //20
+    }
+     
+    console.log('Outer B is ', b); //10
+}
+VM1921:5 Outer B is  10
+VM1921:9 Inner B is  20
+VM1921:12 Outer B is  10
+undefined

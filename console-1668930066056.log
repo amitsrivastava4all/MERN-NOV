@@ -1,0 +1,13 @@
+function add(){
+    console.log("I am the Add ");
+}
+undefined
+add();
+VM184:2 I am the Add 
+undefined
+add = 20;
+20
+add();
+VM254:1 Uncaught TypeError: add is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM254:1

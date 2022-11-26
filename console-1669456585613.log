@@ -1,0 +1,46 @@
+function counter(){
+    count++;
+    return count;
+}
+undefined
+counter();
+VM179:2 Uncaught ReferenceError: count is not defined
+    at counter (<anonymous>:2:5)
+    at <anonymous>:1:1
+counter @ VM179:2
+(anonymous) @ VM202:1
+function counter(){
+    var count = 1;
+    count++;
+    return count;
+}
+undefined
+counter();
+2
+counter();
+2
+counter();
+2
+var count = 1;
+function counter(){
+    
+    count++;
+    return count;
+}
+undefined
+counter();
+2
+counter();
+3
+counter();
+4
+counter();
+5
+counter();
+6
+count = "Amit";
+'Amit'
+counter();
+NaN
+counter();
+NaN

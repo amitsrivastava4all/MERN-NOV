@@ -1,0 +1,93 @@
+var e = function (){
+var count = 1;
+function counter(){
+    
+    count++;
+    return count;
+}
+    return counter;
+}();
+undefined
+e;
+ƒ counter(){
+    
+    count++;
+    return count;
+}
+function(){
+    console.log("Hello AMit ");
+}()
+VM216:1 Uncaught SyntaxError: Function statements require a function name
+(function(){
+    console.log("Hello AMit ");
+})()
+VM229:2 Hello AMit 
+undefined
+(function(){
+    console.log("Hello AMit ");
+})()
+VM259:2 Hello AMit 
+undefined
+(function(){
+    console.log("Hello AMit ");
+    (function(){
+        console.log("Hi AMit ");
+    })();
+})()
+VM406:2 Hello AMit 
+VM406:4 Hi AMit 
+undefined
+(function(){
+    console.log("Hello AMit ");
+    return function(){
+        console.log("Hi AMit ");
+    }
+})()
+VM435:2 Hello AMit 
+ƒ (){
+        console.log("Hi AMit ");
+    }
+var f = (function(){
+    console.log("Hello AMit ");
+    return function(){
+        console.log("Hi AMit ");
+    }
+})();
+VM539:2 Hello AMit 
+undefined
+f;
+ƒ (){
+        console.log("Hi AMit ");
+    }
+f();
+VM539:4 Hi AMit 
+undefined
+ (function(){
+    console.log("Hello AMit ");
+    return function(){
+        console.log("Hi AMit ");
+    }
+})()();
+VM616:2 Hello AMit 
+VM616:4 Hi AMit 
+undefined
+var t = (function (){
+var count = 1;
+function counter(){
+    
+    count++;
+    return count;
+}
+    return counter;
+})();
+undefined
+t();
+2
+t();
+3
+t();
+4
+t();
+5
+t();
+6

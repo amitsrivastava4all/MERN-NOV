@@ -1,0 +1,148 @@
+// ES6 (2015) let
+undefined
+function useLet(){
+    console.log(i);
+    for(let i = 1; i<=10; i++){
+        console.log(i);
+    }
+}
+undefined
+useLet();
+VM282:2 Uncaught ReferenceError: i is not defined
+    at useLet (<anonymous>:2:17)
+    at <anonymous>:1:1
+useLet @ VM282:2
+(anonymous) @ VM301:1
+function useLet(){
+   // console.log(i);
+    for(let i = 1; i<=10; i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+undefined
+useLet();
+VM332:4 1
+VM332:4 2
+VM332:4 3
+VM332:4 4
+VM332:4 5
+VM332:4 6
+VM332:4 7
+VM332:4 8
+VM332:4 9
+VM332:4 10
+VM332:6 Uncaught ReferenceError: i is not defined
+    at useLet (<anonymous>:6:17)
+    at <anonymous>:1:1
+useLet @ VM332:6
+(anonymous) @ VM338:1
+function useLet(){
+    // var i; 
+    console.log(i);
+    for(var i = 1; i<=10; i++){
+        console.log(i);
+    }
+    console.log(i);
+}
+undefined
+useLet();
+VM414:3 undefined
+VM414:5 1
+VM414:5 2
+VM414:5 3
+VM414:5 4
+VM414:5 5
+VM414:5 6
+VM414:5 7
+VM414:5 8
+VM414:5 9
+VM414:5 10
+VM414:7 11
+undefined
+function useBlockLevel(){
+    // var i; 
+    console.log(i);
+    // I work like block level
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log(i);
+    })();
+    }
+    console.log(i);
+}
+VM619:8 Uncaught SyntaxError: Unexpected token ')'
+function useBlockLevel(){
+    // var i; 
+    console.log(i);
+    // I work like block level
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log(i);
+    }
+    })();
+    console.log(i);
+}
+undefined
+useBlockLevel();
+VM662:3 Uncaught ReferenceError: i is not defined
+    at useBlockLevel (<anonymous>:3:17)
+    at <anonymous>:1:1
+useBlockLevel @ VM662:3
+(anonymous) @ VM681:1
+function useBlockLevel(){
+    // var i; 
+    //console.log(i);
+    // I work like block level
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log(i);
+    }
+    })();
+    console.log(i);
+}
+undefined
+useBlockLevel();
+VM693:7 1
+VM693:7 2
+VM693:7 3
+VM693:7 4
+VM693:7 5
+VM693:7 6
+VM693:7 7
+VM693:7 8
+VM693:7 9
+VM693:7 10
+VM693:10 Uncaught ReferenceError: i is not defined
+    at useBlockLevel (<anonymous>:10:17)
+    at <anonymous>:1:1
+useBlockLevel @ VM693:10
+(anonymous) @ VM699:1
+function useBlockLevel(){
+    // var i; 
+    //console.log(i);
+    // I work like block level
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log(i);
+    }
+    })();
+   // console.log(i);
+}
+undefined
+useBlockLevel();
+VM710:7 1
+VM710:7 2
+VM710:7 3
+VM710:7 4
+VM710:7 5
+VM710:7 6
+VM710:7 7
+VM710:7 8
+VM710:7 9
+VM710:7 10
+undefined
+typeof console;
+'object'
+typeof console.log
+'function'

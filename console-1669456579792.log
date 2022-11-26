@@ -1,0 +1,47 @@
+function init(){
+var count = 1;
+function counter(){
+    
+    count++;
+    return count;
+}
+    return counter;
+}
+undefined
+var e = init();
+undefined
+e;
+ƒ counter(){
+    
+    count++;
+    return count;
+}
+typeof e;
+'function'
+console.dir(e);
+VM235:1 ƒ counter()arguments: nullcaller: nulllength: 0name: "counter"prototype: {constructor: ƒ}[[FunctionLocation]]: VM126:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (init) {count: 1}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+e();
+2
+e();
+3
+e();
+4
+e();
+5
+e();
+6
+count;
+VM279:1 Uncaught ReferenceError: count is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM279:1
+var e = init();
+undefined
+e();
+2
+e();
+3
+e();
+4
+e();
+5

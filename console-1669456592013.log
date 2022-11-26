@@ -1,0 +1,197 @@
+function calc(){
+    var add = function (a,b){
+        return a + b;
+    }
+    var sub = function (a,b){
+        return a-b;
+        
+    }
+    return {add : add, sub};
+}
+undefined
+var t = calc();
+undefined
+t;
+{add: ƒ, sub: ƒ}
+t.add(10,20);
+30
+var a = 100; // Global Scope
+function scope(){
+    if(10>2){
+        var a = 20; // Fn Level scope
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+VM615:4 Uncaught SyntaxError: Identifier 'a' has already been declared
+var a = 100; // Global Scope
+
+function scope(){
+     var a = 20; // Fn Level scope
+    if(10>2){
+       
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+undefined
+var a = 100; // Global Scope
+
+function scope(){
+    console.log(a);
+    if(100>2){
+     var a = 20; // Fn Level scope
+    }
+    if(10>2){
+       
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+undefined
+scope();
+VM742:4 undefined
+VM742:11 10
+undefined
+a;
+100
+var a = 100; // Global Scope
+
+function scope(){
+    console.log(a);
+    if(100>2){
+     var a = 20; // Fn Level scope
+        console.log(a);
+    }
+    if(10>2){
+       
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+undefined
+scope();
+VM830:4 undefined
+VM830:7 20
+VM830:12 10
+undefined
+var a = 100; // Global Scope
+
+function scope(){
+    console.log(a);
+    if(100>2){
+     var a = 20; // Fn Level scope
+        console.log(a , window.a);
+    }
+    if(10>2){
+       
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+window.a;
+100
+scope(); // window.scope()
+VM937:4 undefined
+VM937:7 20 100
+VM937:12 10
+undefined
+var a = 100; // Global Scope
+
+function scope(){
+    console.log(a);
+    if(100>2){
+     var a = 20; // Fn Level scope
+        console.log(a , this.a);
+        // this it is a keyword, it hold the current calling object reference
+    }
+    if(10>2){
+       
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+undefined
+window.scope();
+VM1212:4 undefined
+VM1212:7 20 100
+VM1212:13 10
+undefined
+window ;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+this;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+window == this;
+true
+var a = 100; // Global Scope
+
+function scope(){
+    console.log(a);
+    if(100>2){
+     var a = 20; // Fn Level scope
+        console.log(a , this.a);
+        // this it is a keyword, it hold the current calling object reference
+    }
+    if(10>2){
+       n=9000;
+        let a = 10; // Block Level Scope
+        console.log(a);
+    }
+}
+undefined
+scope();
+VM1344:4 undefined
+VM1344:7 20 100
+VM1344:13 10
+undefined
+var a = 100; // Global Scope
+
+function scope(){
+    console.log(a);
+    if(100>2){
+     var a = 20; // Fn Level scope
+        console.log(a , this.a);
+        // this it is a keyword, it hold the current calling object reference
+    }
+    if(10>2){
+       n=9000;
+        let a = 10; // Block Level Scope
+        console.log(a, n);
+    }
+}
+undefined
+scope();
+VM1404:4 undefined
+VM1404:7 20 100
+VM1404:13 10 9000
+undefined
+window.n;
+9000
+function calc(x,y){
+    var add = function(){
+        return  x + y;
+    }
+    var sub = function(z){
+        return  x - y - z;
+    }
+    return {add, sub};
+}
+undefined
+var e = calc();
+undefined
+e;
+{add: ƒ, sub: ƒ}
+var e = calc(10,20);
+undefined
+e;
+{add: ƒ, sub: ƒ}
+e.add();
+30
+e.sub(2);
+-12
+console.dir(e);
+VM2002:1 Objectadd: ƒ ()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1787:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (calc) {y: 20, x: 10}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}sub: ƒ (z)[[Prototype]]: Object
+undefined

@@ -1,0 +1,372 @@
+function cube(num){
+    return num **3;
+}
+
+undefined
+function evenOdd(num){
+    return num%2==0?"Even "+num:"Odd "+num;
+}
+undefined
+function table(num){
+    return 5*num;
+}
+undefined
+function loop(choice){
+    for(let i =1; i<=10; i++){
+            if(choice ==1){
+                console.log(evenOdd(i));
+            }
+        else if(choice ==2){
+                console.log(cube(i));
+            }
+        if(choice ==3){
+                console.log(table(i));
+            }
+}
+}
+undefined
+loop(1);
+VM717:4 Odd 1
+VM717:4 Even 2
+VM717:4 Odd 3
+VM717:4 Even 4
+VM717:4 Odd 5
+VM717:4 Even 6
+VM717:4 Odd 7
+VM717:4 Even 8
+VM717:4 Odd 9
+VM717:4 Even 10
+undefined
+loop(2);
+VM717:7 1
+VM717:7 8
+VM717:7 27
+VM717:7 64
+VM717:7 125
+VM717:7 216
+VM717:7 343
+VM717:7 512
+VM717:7 729
+VM717:7 1000
+undefined
+loop(3);
+VM717:10 5
+VM717:10 10
+VM717:10 15
+VM717:10 20
+VM717:10 25
+VM717:10 30
+VM717:10 35
+VM717:10 40
+VM717:10 45
+VM717:10 50
+undefined
+function loop(fn){
+    for(let i =1; i<=10; i++){
+           console.log(fn(i));
+}
+}
+undefined
+loop(cube);
+VM868:3 1
+VM868:3 8
+VM868:3 27
+VM868:3 64
+VM868:3 125
+VM868:3 216
+VM868:3 343
+VM868:3 512
+VM868:3 729
+VM868:3 1000
+undefined
+loop(evenOdd);
+VM868:3 Odd 1
+VM868:3 Even 2
+VM868:3 Odd 3
+VM868:3 Even 4
+VM868:3 Odd 5
+VM868:3 Even 6
+VM868:3 Odd 7
+VM868:3 Even 8
+VM868:3 Odd 9
+VM868:3 Even 10
+undefined
+loop(table);
+VM868:3 5
+VM868:3 10
+VM868:3 15
+VM868:3 20
+VM868:3 25
+VM868:3 30
+VM868:3 35
+VM868:3 40
+VM868:3 45
+VM868:3 50
+undefined
+const cube2 = num=>num**3;
+undefined
+function cube(num){
+    return num **3;
+}
+
+undefined
+const cube3 = (num)=>{
+ console.log(num);
+    return num**3;
+}
+undefined
+cube2(5);
+125
+cube3(5);
+VM1283:2 5
+125
+loop(num=>num**3);
+VM868:3 1
+VM868:3 8
+VM868:3 27
+VM868:3 64
+VM868:3 125
+VM868:3 216
+VM868:3 343
+VM868:3 512
+VM868:3 729
+VM868:3 1000
+undefined
+var z = 100;
+function cube(num){
+    console.log(this);
+    return num **3 * z;
+}
+
+undefined
+cube(3);
+VM1530:3 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+2700
+cube(3);
+VM1530:3 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+2700
+cube(3);
+VM1530:3 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+2700
+z=2;
+2
+cube(3);
+VM1530:3 Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+54
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        this.arr.forEach(function(e){
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        }
+    }
+}
+obj.compute();
+VM2243:13 Uncaught SyntaxError: missing ) after argument list
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        this.arr.forEach(function(e){
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+VM2255:11 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:11:26
+    at Array.forEach (<anonymous>)
+    at Object.compute (<anonymous>:6:18)
+    at <anonymous>:16:5
+(anonymous) @ VM2255:11
+compute @ VM2255:6
+(anonymous) @ VM2255:16
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        console.log('First This is ', this);
+        this.arr.forEach(function(e){
+            console.log("Second This is " this);
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+VM2567:8 Uncaught SyntaxError: missing ) after argument list
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        console.log('First This is ', this);
+        this.arr.forEach(function(e){
+            console.log("Second This is " ,this);
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+VM2581:6 First This is  {arr: Array(8), even: Array(0), odd: Array(0), compute: ƒ}
+VM2581:8 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2581:13 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:13:26
+    at Array.forEach (<anonymous>)
+    at Object.compute (<anonymous>:7:18)
+    at <anonymous>:18:5
+(anonymous) @ VM2581:13
+compute @ VM2581:7
+(anonymous) @ VM2581:18
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        console.log('First This is ', this);
+        var that = this;
+        this.arr.forEach(function(e){
+            console.log("Second This is " ,this);
+            if(e%2==0){
+                that.even.push(e);
+            }
+            else{
+                that.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+VM2653:6 First This is  {arr: Array(8), even: Array(0), odd: Array(0), compute: ƒ}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM2653:9 Second This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        
+        var that = this;
+        this.arr.forEach(function(e){
+           
+            if(e%2==0){
+                that.even.push(e);
+            }
+            else{
+                that.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+undefined
+obj.even;
+(4) [2, 4, 6, 8]
+obj.odd;
+(4) [1, 3, 5, 7]
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        
+        
+        this.arr.forEach((e)=>{
+           
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+undefined
+obj.even.length=0
+0
+obj.odd.length=0
+0
+obj;
+{arr: Array(8), even: Array(0), odd: Array(0), compute: ƒ}
+var obj = {
+    arr:[1,2,3,4,5,6,7,8],
+    even:[],
+    odd:[],
+    compute:function(){
+        
+        
+        this.arr.forEach((e)=>{
+           
+            if(e%2==0){
+                this.even.push(e);
+            }
+            else{
+                this.odd.push(e);
+            }
+        });
+    }
+}
+obj.compute();
+undefined
+obj;
+{arr: Array(8), even: Array(4), odd: Array(4), compute: ƒ}arr: (8) [1, 2, 3, 4, 5, 6, 7, 8]compute: ƒ ()even: (4) [2, 4, 6, 8]odd: (4) [1, 3, 5, 7][[Prototype]]: Object
+var r = [10,20,30,40,50];
+undefined
+r.push(1000);
+6
+r;
+(6) [10, 20, 30, 40, 50, 1000]
+r.find(e=>e==50);
+50
+r.find(e=>e>50);
+1000
+r.find(e=>e<50);
+10
+r.filter(e=>e<50);
+(4) [10, 20, 30, 40]
+r.unshift(3);
+7
+r;
+(7) [3, 10, 20, 30, 40, 50, 1000]
+r.sort((a,b)=>a-b);
+(7) [3, 10, 20, 30, 40, 50, 1000]
+r.unshift(3000);
+8
+r;
+(8) [3000, 3, 10, 20, 30, 40, 50, 1000]
+r.sort((a,b)=>a-b);
+(8) [3, 10, 20, 30, 40, 50, 1000, 3000]
+r.sort((a,b)=>b-a);
+(8) [3000, 1000, 50, 40, 30, 20, 10, 3]

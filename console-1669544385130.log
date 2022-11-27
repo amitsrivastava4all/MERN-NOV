@@ -1,0 +1,14 @@
+var a = function(){
+    return 10;
+}
+undefined
+typeof a;
+'function'
+a();
+10
+function show(fn){
+    console.log(fn());
+}
+show(a);
+VM808:2 10
+undefined

@@ -1,0 +1,217 @@
+var arr = [1,2,90,10,5,60,100,90,10,20,10];
+undefined
+function myForEach(callBackFn){
+    for(let i = 0; i<arr.length; i++){
+        callBackFn(arr[i], i, arr);
+    }
+}
+undefined
+myForEach(e=>console.log(e));
+VM420:1 1
+VM420:1 2
+VM420:1 90
+VM420:1 10
+VM420:1 5
+VM420:1 60
+VM420:1 100
+VM420:1 90
+VM420:1 10
+VM420:1 20
+VM420:1 10
+undefined
+myForEach((e,index)=>console.log(e, index));
+VM512:1 1 0
+VM512:1 2 1
+VM512:1 90 2
+VM512:1 10 3
+VM512:1 5 4
+VM512:1 60 5
+VM512:1 100 6
+VM512:1 90 7
+VM512:1 10 8
+VM512:1 20 9
+VM512:1 10 10
+undefined
+arr.forEach(e=>console.log(e));
+// function printIt(e){
+// console.log('Print ', e);
+// }
+// arr.forEach(printIt);
+VM634:1 1
+VM634:1 2
+VM634:1 90
+VM634:1 10
+VM634:1 5
+VM634:1 60
+VM634:1 100
+VM634:1 90
+VM634:1 10
+VM634:1 20
+VM634:1 10
+undefined
+arr.forEach((e, i, a)=>console.log(e, i , a);
+VM809:1 Uncaught SyntaxError: missing ) after argument list
+arr.forEach((e, i, a)=>console.log(e, i , a));
+VM817:1 1 0 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 2 1 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 90 2 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 10 3 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 5 4 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 60 5 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 100 6 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 90 7 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 10 8 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 20 9 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+VM817:1 10 10 (11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+undefined
+arr;
+(11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+arr.find(e=>e==10);
+10
+arr.find(e=>e==1000000);
+undefined
+arr.find(e=>e==10)?"Found ":"Not Found";
+'Found '
+arr.find(e=>e==18880)?"Found ":"Not Found";
+'Not Found'
+arr.findIndex(e=>e==10);
+3
+arr;
+(11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+arr.lastIndexOf(10);
+10
+arr.lastIndexOf(20);
+9
+arr.filter(e=>e==10);
+(3) [10, 10, 10]
+arr.filter(e=>e==10).length;
+3
+arr.lastIndexOf(29999990);
+-1
+arr.findIndex(e=>e==1000000);
+-1
+arr;
+(11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+var e= arr;
+undefined
+e;
+(11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+arr;
+(11) [1, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+e == arr;
+true
+e[0] = 999999;
+999999
+e;
+(11) [999999, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+arr;
+(11) [999999, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+var t = [...arr];
+undefined
+t;
+(11) [999999, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+t[0] = 55555;
+55555
+arr;
+(11) [999999, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+t == arr;
+false
+arr.filter(e=>e==10);
+(3) [10, 10, 10]
+var g = arr.filter(e=>true);
+undefined
+g;
+(11) [999999, 2, 90, 10, 5, 60, 100, 90, 10, 20, 10]
+arr == g;
+false
+arr = arr.filter(e=>e!=10);
+(8) [999999, 2, 90, 5, 60, 100, 90, 20]
+var prices = [1000,2000,4000,600, 900,300,200];
+undefined
+prices.map(e=>(e*0.18+e));
+(7) [1180, 2360, 4720, 708, 1062, 354, 236]
+var tax = prices.map(e=>(e*0.18+e));
+undefined
+prices;
+(7) [1000, 2000, 4000, 600, 900, 300, 200]
+tax;
+(7) [1180, 2360, 4720, 708, 1062, 354, 236]
+var orgPrice = 90000;
+undefined
+90000 * 0.10;
+9000
+90000 * 0.18;
+16200
+var formattedPrice = "9,00,000";
+undefined
+prices;
+(7) [1000, 2000, 4000, 600, 900, 300, 200]
+orgPrice.toLocaleString('en-US');
+'90,000'
+orgPrice.toLocaleString('fr-FR');
+'90 000'
+orgPrice.toLocaleString('hi-IN');
+'90,000'
+orgPrice = 943433244;
+943433244
+orgPrice.toLocaleString('hi-IN');
+'94,34,33,244'
+orgPrice.toLocaleString('fr-FR');
+'943 433 244'
+orgPrice.toLocaleString('en-US');
+'943,433,244'
+prices;
+(7) [1000, 2000, 4000, 600, 900, 300, 200]
+prices.map(e=>e.toLocaleString('hi-IN'));
+(7) ['1,000', '2,000', '4,000', '600', '900', '300', '200']
+prices.map(e=>`Rs ${e.toLocaleString('hi-IN')} `);
+(7) ['Rs 1,000 ', 'Rs 2,000 ', 'Rs 4,000 ', 'Rs 600 ', 'Rs 900 ', 'Rs 300 ', 'Rs 200 ']
+var formattedPrices = prices.map(e=>`Rs ${e.toLocaleString('hi-IN')} `);
+undefined
+prices;
+(7) [1000, 2000, 4000, 600, 900, 300, 200]
+formattedPrices;
+(7) ['Rs 1,000 ', 'Rs 2,000 ', 'Rs 4,000 ', 'Rs 600 ', 'Rs 900 ', 'Rs 300 ', 'Rs 200 ']
+var obj = {id:1001,name:'Amit'};
+undefined
+obj.id;
+1001
+obj.name;
+'Amit'
+var clonePrices = prices.map(e=>e);
+undefined
+clonePrices;
+(7) [1000, 2000, 4000, 600, 900, 300, 200]
+prices;
+(7) [1000, 2000, 4000, 600, 900, 300, 200]
+clonePrices == prices;
+false
+prices.reduce((acc, e)=>e+acc);
+9000
+prices.reduce((acc, e)=>e+acc, 0);
+9000
+prices.reduce((acc, e)=>{
+    console.log('Acc ', acc, ' Element ', e);
+    return e+acc;
+});
+VM3356:2 Acc  1000  Element  2000
+VM3356:2 Acc  3000  Element  4000
+VM3356:2 Acc  7000  Element  600
+VM3356:2 Acc  7600  Element  900
+VM3356:2 Acc  8500  Element  300
+VM3356:2 Acc  8800  Element  200
+9000
+prices.reduce((acc, e)=>{
+    console.log('Acc ', acc, ' Element ', e);
+    return e+acc;
+}, 0);
+VM3375:2 Acc  0  Element  1000
+VM3375:2 Acc  1000  Element  2000
+VM3375:2 Acc  3000  Element  4000
+VM3375:2 Acc  7000  Element  600
+VM3375:2 Acc  7600  Element  900
+VM3375:2 Acc  8500  Element  300
+VM3375:2 Acc  8800  Element  200
+9000
+var arr = [1,2,90,10,5,60,100,90,10,20,10];
+undefined

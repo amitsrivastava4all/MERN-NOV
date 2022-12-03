@@ -1,0 +1,12 @@
+var a  = 10; // Global (Hoisting)
+function b(){
+    console.log('A is ', typeof a);
+    a = 20;
+    console.log(' A is ', a);
+    return ; // exit from the function
+    function a(){ // Hoisting
+        
+    }
+}
+b();
+console.log(a);

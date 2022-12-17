@@ -1,0 +1,124 @@
+var e = parseInt("222");
+console.log(e);
+console.log("Hi ");
+VM241:2 222
+VM241:3 Hi 
+undefined
+console.log("Start ");
+setTimeout(()=>{
+    console.log("I will Call Later ")
+},3000);
+console.log("End ");
+VM658:1 Start 
+VM658:5 End 
+undefined
+VM658:3 I will Call Later 
+console.log("Start ");
+var e = doWork();
+console.log("Result ",e);
+console.log("End ");
+function doWork(){
+    setTimeout(()=>{
+        return 1000;
+    },5000);
+}
+VM1100:1 Start 
+VM1100:3 Result  undefined
+VM1100:4 End 
+undefined
+function callBack2(result){
+    console.log("Callback 2 Result ", result);
+}
+function getData(result, callBackFn){
+    console.log("Result ", result);
+    setTimeout(()=>callBackFn(),6000);
+}
+console.log("Start ");
+function fail(err){
+    console.log("Fail ",err);
+}
+doWork(getData, fail); // getData is a CallBack Fn
+console.log("Result ",e);
+console.log("End ");
+function doWork(success, fail){
+    setTimeout(()=>{
+        //return 1000;
+        if(10>2){
+        success(1000, callBack2);
+        }
+        else{
+        fail("Reason of Fail ");
+        }
+    },5000);
+}
+VM2248:8 Start 
+VM2248:13 Result  undefined
+VM2248:14 End 
+undefined
+VM2248:5 Result  1000
+VM2248:2 Callback 2 Result  undefined
+function getPizza(){
+    var pr= new Promise((resolve, reject)=>{
+        // Async Code
+         setTimeout(()=>{
+            resolve(2000); // resolve call then
+    }, 5000);
+    }); // Es6 (2015)
+    return pr;
+   
+}
+var p = getPizza();
+console.log('Promise is ', p);
+p.then(data=>console.log('Data is ', data)).catch(err=>console.log('Err', err);
+VM3373:13 Uncaught SyntaxError: missing ) after argument list
+function getPizza(){
+    var pr= new Promise((resolve, reject)=>{
+        // Async Code
+         setTimeout(()=>{
+            resolve(2000); // resolve call then
+    }, 5000);
+    }); // Es6 (2015)
+    return pr;
+   
+}
+var p = getPizza();
+console.log('Promise is ', p);
+p.then(data=>console.log('Data is ', data)).catch(err=>console.log('Err', err));
+VM3405:12 Promise is  Promise {<pending>}
+Promise {<pending>}
+VM3405:13 Data is  2000
+p;
+Promise {<fulfilled>: 2000}
+function getPizza(){
+    var pr= new Promise((resolve, reject)=>{
+        // Async Code
+         setTimeout(()=>{
+            reject("No Pizza "); // resolve call then
+    }, 5000);
+    }); // Es6 (2015)
+    return pr;
+   
+}
+var p = getPizza();
+console.log('Promise is ', p);
+p.then(data=>console.log('Data is ', data)).catch(err=>console.log('Err', err));
+VM3464:12 Promise is  Promise {<pending>}
+Promise {<pending>}
+VM3464:13 Err No Pizza 
+p;
+Promise {<rejected>: 'No Pizza '}
+function getPizza(){
+    var pr= new Promise((resolve, reject)=>{
+        // Async Code
+         setTimeout(()=>{
+            reject("No Pizza "); // resolve call then
+    }, 5000);
+    }); // Es6 (2015)
+    return pr;
+   
+}
+getPizza().then(data=>console.log('Data is ', data)).catch(err=>console.log('Err', err));
+Promise {<pending>}
+VM3569:11 Err No Pizza 
+p;
+Promise {<rejected>: 'No Pizza '}

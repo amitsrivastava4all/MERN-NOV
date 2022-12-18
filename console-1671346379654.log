@@ -1,0 +1,198 @@
+function cube(num, time){
+    const pr =new Promise((resolve, reject)=>{
+            if(num>=10){
+            reject("Error Value is too Big ");
+            }
+            setTimeout(()=>resolve(num ** 3), time)
+    });
+    return pr;
+    
+}
+undefined
+var p = cube(3, 4000);
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1013:2 27
+var p = cube(30, 4000);
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+VM1033:2 Error Value is too Big 
+Promise {<fulfilled>: undefined}
+var p = cube(30, 4000);
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+VM1037:2 Error Value is too Big 
+Promise {<fulfilled>: undefined}
+const p2 = Promise.all([cube(2,4000), cube(3, 3000), cube(7,7000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1492:2 (3) [8, 27, 343]
+const p2 = Promise.all([cube(20,4000), cube(3, 3000), cube(7,7000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+VM1503:2 Error Value is too Big 
+Promise {<fulfilled>: undefined}
+const p2 = Promise.allSettled([cube(20,4000), cube(3, 3000), cube(7,7000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1540:2 (3) [{…}, {…}, {…}]0: {status: 'rejected', reason: 'Error Value is too Big '}1: {status: 'fulfilled', value: 27}2: {status: 'fulfilled', value: 343}length: 3[[Prototype]]: Array(0)
+function cube(num, time){
+    const pr =new Promise((resolve, reject)=>{
+            if(num>=10){
+            reject("Error Value is too Big "+num);
+            }
+            setTimeout(()=>resolve(num ** 3), time)
+    });
+    return pr;
+    
+}
+undefined
+const p2 = Promise.allSettled([cube(20,4000), cube(3, 3000), cube(7,7000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+Promise {<pending>}
+VM1589:2 (3) [{…}, {…}, {…}]0: {status: 'rejected', reason: 'Error Value is too Big 20'}1: {status: 'fulfilled', value: 27}2: {status: 'fulfilled', value: 343}length: 3[[Prototype]]: Array(0)
+function cube(num, time){
+    console.log("Cube Call ", num);
+    const pr =new Promise((resolve, reject)=>{
+            if(num>=10){
+            reject("Error Value is too Big ");
+            }
+            setTimeout(()=>resolve(num ** 3), time)
+    });
+    return pr;
+    
+}
+undefined
+const p2 = Promise.all([cube(2,4000), cube(3, 3000), cube(70,7000), cube(5, 5000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+VM1868:2 Cube Call  2
+VM1868:2 Cube Call  3
+VM1868:2 Cube Call  70
+VM1868:2 Cube Call  5
+VM1872:2 Error Value is too Big 
+Promise {<fulfilled>: undefined}
+const p2 = Promise.allSettled([cube(2,4000), cube(3, 3000), cube(70,7000), cube(5, 5000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+VM1868:2 Cube Call  2
+VM1868:2 Cube Call  3
+VM1868:2 Cube Call  70
+VM1868:2 Cube Call  5
+Promise {<pending>}
+VM1896:2 (4) [{…}, {…}, {…}, {…}]0: {status: 'fulfilled', value: 8}1: {status: 'fulfilled', value: 27}2: {status: 'rejected', reason: 'Error Value is too Big '}3: {status: 'fulfilled', value: 125}length: 4[[Prototype]]: Array(0)
+const p2 = Promise.race([cube(2,4000), cube(3, 3000), cube(70,7000), cube(5, 5000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+VM1868:2 Cube Call  2
+VM1868:2 Cube Call  3
+VM1868:2 Cube Call  70
+VM1868:2 Cube Call  5
+VM1920:2 Error Value is too Big 
+Promise {<fulfilled>: undefined}
+const p2 = Promise.race([cube(2,4000), cube(3, 3000), cube(7,7000), cube(5, 5000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+VM1868:2 Cube Call  2
+VM1868:2 Cube Call  3
+VM1868:2 Cube Call  7
+VM1868:2 Cube Call  5
+Promise {<pending>}
+VM1931:2 27
+function cube(num, time){
+    console.log("Cube Call ", num);
+    const pr =new Promise((resolve, reject)=>{
+            if(num>=10){
+            reject("Error Value is too Big "+num);
+            }
+            setTimeout(()=>resolve(num ** 3), time)
+    });
+    return pr;
+    
+}
+undefined
+const p2 = Promise.any([cube(2,4000), cube(3, 3000), cube(70,7000), cube(5, 5000)]);
+p2.then(results=>console.log(results)).catch(err=>console.log(err));
+VM2002:2 Cube Call  2
+VM2002:2 Cube Call  3
+VM2002:2 Cube Call  70
+VM2002:2 Cube Call  5
+Promise {<pending>}
+VM2009:2 27
+const p = cube(2,4000);
+p.then(data=>{
+    const p2 = cube(data,5000);
+    p2.then(d=>console.log(d)).catch(e=>console.log(e));
+}).catch(e=>console.log(e));
+VM2497:1 Uncaught SyntaxError: Identifier 'p' has already been declared
+ cube(2,4000)
+.then(data=>{
+    const p2 = cube(data,5000);
+    p2.then(d=>console.log(d)).catch(e=>console.log(e));
+}).catch(e=>console.log(e));
+VM2002:2 Cube Call  2
+Promise {<pending>}
+VM2002:2 Cube Call  8
+VM2527:4 512
+function total(){
+    const firstResult = await cube(2,4000);
+    const secondResult = await cube(firstResult,5000);
+    return firstResult + secondResult;
+}
+VM2878:2 Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules
+async function total(){
+    const firstResult = await cube(2,4000);
+    const secondResult = await cube(firstResult,5000);
+    return firstResult + secondResult;
+}
+undefined
+console.log("Start ");
+total();
+console.log("End");
+VM3094:1 Start 
+VM2002:2 Cube Call  2
+VM3094:3 End
+undefined
+VM2002:2 Cube Call  8
+console.log("Start ");
+const pr3 = total();
+pr3.then(data=>console.log('Total ', data)).catch(e=>console.log(e));
+console.log("End");
+VM3347:1 Start 
+VM2002:2 Cube Call  2
+VM3347:4 End
+undefined
+VM2002:2 Cube Call  8
+VM3347:3 Total  520
+async function total(){
+    try{
+    const firstResult = await cube(2,4000);
+    const secondResult = await cube(firstResult,5000);
+    return firstResult + secondResult;
+    }catch(e){
+        throw e;
+    }
+}
+undefined
+console.log("Start ");
+const pr3 = total();
+pr3.then(data=>console.log('Total ', data)).catch(e=>console.log(e));
+console.log("End");
+VM3436:1 Start 
+VM2002:2 Cube Call  2
+VM3436:4 End
+undefined
+VM2002:2 Cube Call  8
+VM3436:3 Total  520
+async function total(){
+    try{
+    const firstResult = await cube(200,4000);
+    const secondResult = await cube(firstResult,5000);
+    return firstResult + secondResult;
+    }catch(e){
+        throw e;
+    }
+}
+undefined
+console.log("Start ");
+const pr3 = total();
+pr3.then(data=>console.log('Total ', data)).catch(e=>console.log(e));
+console.log("End");
+VM3459:1 Start 
+VM2002:2 Cube Call  200
+VM3459:4 End
+VM3459:3 Error Value is too Big 200
+undefined

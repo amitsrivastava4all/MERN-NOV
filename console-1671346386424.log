@@ -1,0 +1,22 @@
+const obj = {x:10 , y:20};
+undefined
+const {x,y} = obj; // Destructure
+undefined
+x;
+10
+y;
+20
+var t = [10,20,30,40];
+undefined
+var h = t[0];
+undefined
+var [a,b,,c,d] = t;
+undefined
+a;
+10
+b;
+20
+c;
+40
+d;
+undefined

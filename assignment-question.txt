@@ -1,0 +1,10 @@
+1. Delete Button must be disable by default
+2. Delete button enable if mark count is >=1
+3. When u click on delete button (enable) so it will delete the red items and update the counts and print the remaining records
+
+
+
+Click on Edit Button (Pencil) 
+So it pick the current record and fill all the values in above textboxes (Current Row)
+Then update button will be enable so it is also disable by default.
+Then user change the values in textboxes. And click on update button and that value will be reflected on row.

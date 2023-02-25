@@ -1,0 +1,26 @@
+  <Tabs variant="fullWidth" value={value} onChange={tabChange} aria-label="icon label tabs example">
+         <LinkTab icon={<TableViewIcon />} label="View All" pathname="/View"  {...a11yProps(0)} />
+         <LinkTab icon={<AddBoxIcon />} label="Add New User" pathname ="/add-user" {...a11yProps(0)}/>
+         <LinkTab icon={<DeleteForeverIcon />} label="Delete User" pathname="/delete" {...a11yProps(0)}/>
+     </Tabs>
+
+
+function LinkTab(props) {
+  console.log(props);
+  return (
+    <Tab
+      component={Link}
+      //   onClick={(event) => {
+      //     event.preventDefault();
+      //   }}
+      to={props.pathname}
+      {...props}
+    />
+  );
+}
+function a11yProps(index) {
+  return {
+    id: `nav-tab-${index}`,
+    "aria-controls": `nav-tabpanel-${index}`
+  };
+}

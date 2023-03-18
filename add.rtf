@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28820\viewh17760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs60 \cf0 function add()\{\
+    //console.log(arguments.length);\
+    var sum = 0;\
+    for(var i= 0 ; i<arguments.length; i++)\{\
+        if(arguments[i] instanceof Array)\{\
+            for(var j = 0; j<arguments[i].length; j++)\{\
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]) );\
+            \}\
+        \} else if (typeof arguments[i]==='function')\{\
+           arguments[i] = arguments[i]();\
+             sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));\
+        \}\
+        else \{\
+             sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));\
+        \}\
+        \
+    \}\
+    return sum;\
+\}
+\fs76 \
+\
+\
+\
+WAP to add Anything\
+add()  - 0 - Pass\
+add(1,2)- 3 - Pass\
+add(1,2,3,4,5) - 15 Pass\
+add(1,\'94two\'94, \'93three\'94, \'93four\'94, \'935\'94) - 6 - Pass\
+add(1,[2,3],[\'934\'94,5,\'94,six],1) - 16 \'97> total 4 Arguments - Pass\
+add(1,one , two,[\'933\'94,4]) 12\
+\
+add(1,[2,\'943\'94,\'94four\'94,one, two],\'945\'94);\
+1 + 2 + 3 + 2 + 2 + 5\
+function one()\{\
+return 2;\
+\}\
+function two()\{\
+return \'932\'94;\
+\}\
+\
+}

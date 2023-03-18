@@ -1,0 +1,350 @@
+var a ;
+undefined
+typeof a;
+'undefined'
+a=10;
+10
+typeof a;
+'number'
+a= "amit";
+'amit'
+typeof a;
+'string'
+a= true;
+true
+typeof a;
+'boolean'
+a = 10n;
+10n
+typeof a;
+'bigint'
+a = [];
+[]
+typeof a;
+'object'
+function show(){
+    console.log("I am the Show ");
+}
+undefined
+typeof show;
+'function'
+typeof console;
+'object'
+typeof log;
+'undefined'
+typeof console.log;
+'function'
+typeof show;
+'function'
+show();
+VM323:2 I am the Show 
+undefined
+show(1,2);
+VM323:2 I am the Show 
+undefined
+show();
+VM323:2 I am the Show 
+undefined
+show("Amit",22);
+VM323:2 I am the Show 
+undefined
+show(1,2,3,4,6,);
+VM323:2 I am the Show 
+undefined
+show(1,2,3,4,6,100,200);
+VM323:2 I am the Show 
+undefined
+show(1,2,3,4,6,100,200, true, [], "ram");
+VM323:2 I am the Show 
+undefined
+function show(){
+    console.log("I am the Show ");
+}
+undefined
+console.log("Hello JS ");
+VM932:1 Hello JS 
+undefined
+console.dir(show);
+VM980:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: constructor: ƒ show()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[FunctionLocation]]: VM827:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function show(){
+    console.log('Arguments ', arguments.length);
+}
+undefined
+show();
+VM1218:2 Arguments  0
+undefined
+show(10,20);
+VM1218:2 Arguments  2
+undefined
+show(10,20,30);
+VM1218:2 Arguments  3
+undefined
+show(10,20,30,40);
+VM1218:2 Arguments  4
+undefined
+show(10,20,30,40,50);
+VM1218:2 Arguments  5
+undefined
+class W{
+    
+}
+undefined
+typeof W;
+'function'
+function add(){
+    console.log(arguments.length);
+}
+undefined
+add();
+VM1557:2 0
+undefined
+add(1,20);
+VM1557:2 2
+undefined
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add();
+0
+add(1,2);
+3
+add(1,2,3,4,5);
+15
+add(1,"two", "three", "four","5");
+'1twothreefour5'
+1 + "two"
+'1two'
+parseInt("10")
+10
+parseInt("10.20");
+10
+parseFloat("10.20");
+10.2
+parseInt("Amit");
+NaN
+NaN + 10;
+NaN
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        sum = sum + parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,"two", "three", "four","5");
+NaN
+isNaN(parseInt("Amit"));
+true
+isNaN(parseInt("10"));
+false
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        var result = isNaN(parseInt(arguments[i]));
+        sum = sum + ;
+    }
+    return sum;
+}
+VM2640:6 Uncaught SyntaxError: Unexpected token ';'
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        var result = isNaN(parseInt(arguments[i]));
+        if(result == true){
+            sum = sum + 0;
+        }
+        else{
+        sum = sum + parseInt(arguments[i]);
+        }
+    }
+    return sum;
+}
+undefined
+add(1,"two", "three", "four","5");
+6
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        
+    }
+    return sum;
+}
+undefined
+add(1,"two", "three", "four","5");
+6
+var arr = [10,20,30];
+undefined
+typeof arr;
+'object'
+typeof console;
+'object'
+arr instanceof Array;
+true
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + arguments[i][j];
+            }
+        } else{
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+        
+    }
+    return sum;
+}
+undefined
+add(1,"2",[3,4]);
+10
+add(1,"2",["3",4]);
+'334'
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + parseInt(arguments[i][j]);
+            }
+        } else{
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+        
+    }
+    return sum;
+}
+undefined
+add(1,"2",["3",4]);
+10
+add(1,"2",["3",4, "amit"]);
+NaN
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]) );
+            }
+        } else{
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+        
+    }
+    return sum;
+}
+undefined
+add(1,"2",["3",4, "amit"]);
+10
+function one(){
+    return 1;
+}
+undefined
+function two(){
+return "2";
+}
+undefined
+function add(){
+    //console.log(arguments.length);
+    var sum = 0;
+    for(var i= 0 ; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]) );
+            }
+        } else if (typeof arguments[i]==='function'){
+           arguments[i] = arguments[i]();
+             sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+        else {
+             sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+        }
+        
+    }
+    return sum;
+}
+undefined
+add(1,"2",["3",4, "amit"]);
+10
+add(1,"2",["3",4, "amit"], one, two);
+13
+one();
+1
+two();
+'2'
+ var r = [10,20];
+undefined
+typeof r;
+'object'
+r instanceof Array;
+true
+typeof Array;
+'function'
+function disp(){
+    console.log("I am Disp ");
+}
+undefined
+typeof disp;
+'function'
+disp();
+VM4386:2 I am Disp 
+undefined
+var t = new disp();
+VM4386:2 I am Disp 
+undefined
+t;
+disp {}
+typeof t;
+'object'
+t instanceof disp;
+true
+typeof disp;
+'function'
+function jQuery(){
+    console.log('JQuery call ', arguments.length);
+}
+undefined
+jQuery(this);l
+VM4782:2 JQuery call  1
+VM4819:1 Uncaught ReferenceError: l is not defined
+    at <anonymous>:1:14
+(anonymous) @ VM4819:1
+jQuery(this);
+VM4782:2 JQuery call  1
+undefined
+jQuery(document);
+VM4782:2 JQuery call  1
+undefined
+var $ = jQuery;
+undefined
+typeof $;
+'function'
+$;
+ƒ jQuery(){
+    console.log('JQuery call ', arguments.length);
+}
+$(this);
+VM4782:2 JQuery call  1
+undefined
+$(document);
+VM4782:2 JQuery call  1
+undefined
+$("#p");
+VM4782:2 JQuery call  1
+undefined
